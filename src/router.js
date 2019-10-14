@@ -27,6 +27,13 @@ export default new Router({
             name: 'uploadapi',
             component: () =>
                 import ('@/views/uploadapi/index'),
-        }]
+        },
+        {
+            path: 'apimanager/:name',
+            name: 'apisouorcename',
+            component: () =>
+                import ('@/views/apimanager/detailPage/index'),
+        }
+    ]
     }]
 })
