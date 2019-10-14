@@ -4,7 +4,7 @@
       <StatisCard iconclass="el-icon-s-platform" name="采集平台数量" :value="16" />
       <StatisCard iconclass="el-icon-s-promotion" iconcolor="#44A9F8" name="API数量" :value="100" />
       <StatisCard iconclass="el-icon-s-operation" iconcolor="#4CCCC9" name="API调用次数" :value="300" />
-      <StatisCard iconclass="el-icon-s-platform" iconcolor="#42B983" name="本周API调用次数" :value="100" />
+      <StatisCard iconclass="el-icon-s-marketing" iconcolor="#42B983" name="本周API调用次数" :value="100" />
     </div>
 
     <div class="chart-section">
@@ -39,6 +39,7 @@
     justify-content: space-between;
     .chart {
       flex: 1;
+      margin-top: 20px;
       height: 300px;
     }
   }
