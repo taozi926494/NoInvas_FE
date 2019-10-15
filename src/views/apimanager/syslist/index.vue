@@ -34,53 +34,43 @@ export default {
     return {
       Data: [
         {
-          name: "河南工商系统",
+          name: "河南省科技信息管理系统",
           accessedAPINumber: 1,
+          update: "2019-10-10 11:12:62"
+        },
+        {
+          name: "河南省自然资源网上交易系统",
+          accessedAPINumber: 23,
+          update: "2019-11-14 11:12:62"
+        },
+        {
+          name: "河南省建设技术推广系统",
+          accessedAPINumber: 33,
+          update: "2019-12-14 11:12:62"
+        },
+        {
+          name: "河南省公共机构能耗统计分析系统",
+          accessedAPINumber: 44,
           update: "2019-10-14 11:12:62"
         },
         {
-          name: "河南税务系统",
-          accessedAPINumber: 2,
+          name: "河南省公路系统综合办公平台",
+          accessedAPINumber: 15,
           update: "2019-10-14 11:12:62"
         },
         {
-          name: "河南工商系统",
-          accessedAPINumber: 3,
+          name: "河南省投资项目在线审批监管平台",
+          accessedAPINumber: 14,
           update: "2019-10-14 11:12:62"
         },
         {
-          name: "河南工商系统",
-          accessedAPINumber: 4,
-          update: "2019-10-14 11:12:62"
-        },
-        {
-          name: "河南工商系统",
+          name: "河南省企业研发信息管理系统",
           accessedAPINumber: 5,
           update: "2019-10-14 11:12:62"
         },
         {
-          name: "河南工商系统",
-          accessedAPINumber: 6,
-          update: "2019-10-14 11:12:62"
-        },
-        {
-          name: "河南工商系统",
-          accessedAPINumber: 7,
-          update: "2019-10-14 11:12:62"
-        },
-        {
-          name: "河南工商系统",
+          name: "河南省安全评价网上公开系统",
           accessedAPINumber: 8,
-          update: "2019-10-14 11:12:62"
-        },
-        {
-          name: "河南工商系统",
-          accessedAPINumber: 9,
-          update: "2019-10-14 11:12:62"
-        },
-        {
-          name: "河南工商系统",
-          accessedAPINumber: 10,
           update: "2019-10-14 11:12:62"
         }
       ]
@@ -96,31 +86,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content {
-  display: inline-flex;
-  width: 20%;
-}
-.cardList {
-  width: 100%;
-  margin: 0px 15px 20px 0px;
-  cursor: pointer;
-}
 .page {
   margin-top: 40px;
 }
-
 .card-section {
   display: inline-flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   .el-card {
     width: 350px;
-    margin: 10px;
+    margin: 20px;
     cursor: pointer;
     h3 {
       margin-top: 0;
     }
-
     h3 {
       padding-bottom: 15px;
       border-bottom: 1px solid #aaa;
@@ -138,7 +117,6 @@ export default {
         font-size: 15px;
       }
     }
-
     img {
       width: 90px;
     }

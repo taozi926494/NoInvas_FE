@@ -23,12 +23,12 @@
       <i class="el-icon-search"></i>
       <span>
         结果共计：
-        <strong>8</strong>
+        <strong>1</strong>
         条
       </span>
     </div>
     <div class="card-section">
-      <el-card shadow="always" v-for="item in items" :key="item.name">
+      <el-card shadow="always" v-for="item in items" :key="item.name"  @click.native="goDetailinfo(item)">
         <h3>{{ item.name }}</h3>
         <div class="brief">
           <p>
@@ -73,63 +73,22 @@ export default {
       },
       items: [
         {
-          name: "登录（验证系统）",
-          type: "登录",
-          update: "2019-10-14 15:55:22",
-          status: "已发布",
-          auth: "袁XX"
-        },
-        {
-          name: "表单写入（验证系统）",
-          type: "写入",
-          update: "2019-10-14 15:55:22",
-          status: "已发布",
-          auth: "谢xx"
-        },
-        {
-          name: "手机短信验证码",
-          type: "短信验证码",
-          update: "2019-10-14 15:55:22",
-          status: "已发布",
-          auth: "付xx"
-        },
-        {
-          name: "登录",
-          type: "登录",
-          update: "2019-10-14 15:55:22",
-          status: "已发布",
-          auth: "孔xx"
-        },
-        {
-          name: "企业待录入列表详情查询",
+          name: "科技计划管理制度查询",
           type: "查询",
           update: "2019-10-14 15:55:22",
           status: "已发布",
-          auth: "陈xx"
-        },
-        {
-          name: "更新管理人员信息",
-          type: "写入",
-          update: "2019-10-14 15:55:22",
-          status: "已发布",
-          auth: "张山"
-        },
-        {
-          name: "企业登记身份实名查验告知书",
-          type: "查询",
-          update: "2019-10-14 15:55:22",
-          status: "失效",
-          auth: "张山"
-        },
-        {
-          name: "多证合一（非默认项）",
-          type: "查询、写入",
-          update: "2019-10-14 15:55:22",
-          status: "开发",
-          auth: "张山"
+          auth: "袁公萍"
         }
       ]
-    };
+    }
+  },
+  methods: {
+    goDetailinfo(data) {
+      this.$router.push({
+        path: `${window.document.location.pathname}/${data.name}`,
+      });
+      this.$emit('detailinfo', data);
+    }
   }
 };
 </script>>
