@@ -34,7 +34,7 @@ export default {
     return {
       Data: [
         {
-          name: "河南工商系统",
+          name: "河南科技信息管理系统",
           accessedAPINumber: 1,
           update: "2019-10-14 11:12:62"
         },
@@ -96,31 +96,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content {
-  display: inline-flex;
-  width: 20%;
-}
-.cardList {
-  width: 100%;
-  margin: 0px 15px 20px 0px;
-  cursor: pointer;
-}
 .page {
   margin-top: 40px;
 }
-
 .card-section {
   display: inline-flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   .el-card {
     width: 350px;
-    margin: 10px;
+    margin: 20px;
     cursor: pointer;
     h3 {
       margin-top: 0;
     }
-
     h3 {
       padding-bottom: 15px;
       border-bottom: 1px solid #aaa;
@@ -138,7 +127,6 @@ export default {
         font-size: 15px;
       }
     }
-
     img {
       width: 90px;
     }

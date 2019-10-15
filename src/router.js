@@ -33,6 +33,12 @@ export default new Router({
                 name: 'apilist',
                 component: () =>
                     import ('@/views/apimanager/apilist/index'),
+            },
+            {
+                path: 'apimanager/:name/:info',
+                name: 'apiinfo',
+                component: () =>
+                    import ('@/views/apimanager/detailpage/index'),
             }
         ]
     }]
