@@ -23,7 +23,7 @@
       <i class="el-icon-search"></i>
       <span>
         结果共计：
-        <strong>1</strong>
+        <strong>3</strong>
         条
       </span>
     </div>
@@ -62,20 +62,27 @@ export default {
   data() {
     return {
       form: {
-        name: "",
-        region: "",
-        date1: "",
-        date2: "",
-        delivery: false,
-        type: [],
-        resource: "",
-        desc: ""
+
       },
       items: [
         {
           name: "科技计划管理制度查询",
           type: "查询",
           update: "2019-10-14 15:55:22",
+          status: "已发布",
+          auth: "谢红韬"
+        },
+        {
+          name: "科技奖励查询",
+          type: "查询",
+          update: "2019-10-15 14:03:16",
+          status: "已发布",
+          auth: "谢红韬"
+        },
+        {
+          name: "互动栏目民意征集",
+          type: "登录验证",
+          update: "2019-10-15 16:02:15",
           status: "已发布",
           auth: "袁公萍"
         }
@@ -87,7 +94,6 @@ export default {
       this.$router.push({
         path: `${window.document.location.pathname}/${data.name}`,
       });
-      this.$emit('detailinfo', data);
     }
   }
 };
@@ -96,6 +102,7 @@ export default {
 <style lang="scss">
 .detailContents {
   background: white;
+  height: 100%;
 }
 .filter {
   display: flex;
