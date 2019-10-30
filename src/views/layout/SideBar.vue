@@ -2,29 +2,26 @@
   <el-aside style="width: 140px;">
     <el-menu
       class="el-menu-vertical-demo side-bar"
-      default-active="1"
       background-color="#fff"
       text-color="#686A76"
       active-text-color="#fff"
+      router
+      :default-active="defaultActive"
     >
-      <router-link to="/dashboard">
-        <el-menu-item index="1">
-          <i class="el-icon-menu"></i>
-          <span slot="title">仪表盘</span>
-        </el-menu-item>
-      </router-link>
-      <router-link to="/apimanager">
-        <el-menu-item index="2">
-          <i class="el-icon-s-promotion"></i>
-          <span slot="title">API管理</span>
-        </el-menu-item>
-      </router-link>
-      <router-link to="/uploadapi">
-        <el-menu-item index="3">
-          <i class="el-icon-upload"></i>
-          <span slot="title">上传API</span>
-        </el-menu-item>
-      </router-link>
+      <el-menu-item index="/dashboard">
+        <i class="el-icon-menu"></i>
+        <span slot="title">仪表盘</span>
+      </el-menu-item>
+
+      <el-menu-item index="/apimanager">
+        <i class="el-icon-s-promotion"></i>
+        <span slot="title">API管理</span>
+      </el-menu-item>
+
+      <el-menu-item index="/uploadapi">
+        <i class="el-icon-upload"></i>
+        <span slot="title">上传API</span>
+      </el-menu-item>
     </el-menu>
   </el-aside>
 </template>
@@ -42,6 +39,11 @@
 
 <script>
 export default {
-  name: "SideBar"
+  name: "SideBar",
+  computed: {
+    defaultActive() {
+      return "/" + this.$route.path.split("/")[1];
+    }
+  }
 };
 </script>

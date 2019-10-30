@@ -1,7 +1,7 @@
 <template>
   <el-header>
     <img :src="logo_img" />
-    <span class="platform-name">数桥</span>
+    <span class="platform-name">中电数桥</span>
     <span class="platform-nickname">非侵入式数据采集平台</span>
   </el-header>
 </template>

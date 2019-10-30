@@ -35,7 +35,7 @@ export default {
       Data: [
         {
           name: "河南省科技信息管理系统",
-          accessedAPINumber: 1,
+          accessedAPINumber: 3,
           update: "2019-10-10 11:12:62"
         },
         {
@@ -79,7 +79,7 @@ export default {
   methods: {
     goDetail(name) {
       console.log(name);
-      this.$router.push(`/apimanager/${name}`);
+      this.$router.push(`/apimanager/sys/${name}`);
     }
   }
 };

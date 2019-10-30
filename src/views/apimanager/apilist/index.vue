@@ -92,7 +92,7 @@ export default {
   methods: {
     goDetailinfo(data) {
       this.$router.push({
-        path: `${window.document.location.pathname}/${data.name}`,
+        path: `${window.document.location.pathname}/api/${data.name}`,
       });
     }
   }
