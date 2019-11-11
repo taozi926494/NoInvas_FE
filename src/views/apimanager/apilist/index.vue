@@ -23,33 +23,33 @@
       <i class="el-icon-search"></i>
       <span>
         结果共计：
-        <strong>3</strong>
+        <strong>{{ apiList.length }}</strong>
         条
       </span>
     </div>
     <div class="card-section">
-      <el-card shadow="always" v-for="item in items" :key="item.name"  @click.native="goDetailinfo(item)">
-        <h3>{{ item.name }}</h3>
+      <el-card
+        shadow="always"
+        v-for="item in apiList"
+        :key="item.api_id"
+        @click.native="goDetailinfo(item.api_id)"
+      >
+        <h3>{{ item.api_name }}</h3>
         <div class="brief">
           <p>
             <i class="el-icon-s-promotion"></i>
             <strong>类型：</strong>
-            <span>{{ item.type }}</span>
+            <span>{{ item.driver_type }}</span>
           </p>
           <p>
             <i class="el-icon-s-opportunity"></i>
             <strong>状态：</strong>
-            <span>{{ item.status }}</span>
-          </p>
-          <p>
-            <i class="el-icon-s-custom"></i>
-            <strong>创建者：</strong>
-            <span>{{ item.auth }}</span>
+            <span>{{ item.using_status }}</span>
           </p>
           <p>
             <i class="el-icon-date"></i>
             <strong>更新时间：</strong>
-            <span>{{ item.update }}</span>
+            <span>{{ item.update_time }}</span>
           </p>
         </div>
       </el-card>
@@ -61,38 +61,20 @@
 export default {
   data() {
     return {
-      form: {
-
-      },
-      items: [
-        {
-          name: "科技计划管理制度查询",
-          type: "查询",
-          update: "2019-10-14 15:55:22",
-          status: "已发布",
-          auth: "谢红韬"
-        },
-        {
-          name: "科技奖励查询",
-          type: "查询",
-          update: "2019-10-15 14:03:16",
-          status: "已发布",
-          auth: "谢红韬"
-        },
-        {
-          name: "互动栏目民意征集",
-          type: "登录验证",
-          update: "2019-10-15 16:02:15",
-          status: "已发布",
-          auth: "袁公萍"
-        }
-      ]
-    }
+      form: {},
+      apiList: []
+    };
+  },
+  mounted() {
+    this.$request
+      .get(`/admin/system/${this.$route.params.sys_id}`).then(res => {
+        this.apiList = res.data.api_list
+      })
   },
   methods: {
-    goDetailinfo(data) {
+    goDetailinfo(api_id) {
       this.$router.push({
-        path: `${window.document.location.pathname}/api/${data.name}`,
+        path: `${window.document.location.pathname}/api/${api_id}`
       });
     }
   }

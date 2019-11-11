@@ -35,17 +35,22 @@ export default new Router({
                     import ('@/views/uploadapi/index'),
             },
             {
-                path: 'apimanager/sys/:name',
+                path: 'apimanager/sys/:sys_id',
                 name: 'sys',
                 component: () =>
                     import ('@/views/apimanager/apilist/index'),
             },
             {
-                path: 'apimanager/sys/:name/api/:info',
+                path: 'apimanager/sys/:sys_id/api/:api_id',
                 name: 'apiinfo',
                 component: () =>
                     import ('@/views/apimanager/apiinfo/index'),
-            }
+            }, {
+                path: 'uploadsys',
+                name: 'uploadsys',
+                component: () =>
+                    import ('@/views/uploadsys/index'),
+            },
         ]
     }]
 })

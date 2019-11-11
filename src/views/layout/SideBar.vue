@@ -22,6 +22,11 @@
         <i class="el-icon-upload"></i>
         <span slot="title">上传API</span>
       </el-menu-item>
+
+      <el-menu-item index="/uploadsys">
+        <i class="el-icon-s-platform"></i>
+        <span slot="title">新建系统</span>
+      </el-menu-item>
     </el-menu>
   </el-aside>
 </template>

@@ -7,7 +7,7 @@
     </div>
     <!-- <div class="status">
         <el-tag v-for="(status, index) in apiInfo.status" :color="elTagColors[index % elTagColors.length]" size="small">{{ status }}</el-tag>
-    </div>-->
+    </div> -->
     <div class="describe">
       <el-row class="row">
         <label>
@@ -15,8 +15,8 @@
           <span>{{ apiInfo.requestType }}</span>
         </label>
         <label>
-          驱动方式：
-          <span>{{ apiInfo.driver_type }}</span>
+          提交方式：
+          <span>{{ apiInfo.submitType }}</span>
         </label>
         <label>
           接口状态：
@@ -87,50 +87,47 @@
       <strong>响应返回示例</strong>
       <a :href="apiInfo.spamplesAddress" target="_blank">数据示例</a>
     </div>
-
-    <textarea cols="100" rows="30" v-model="apiInfo.api_script"></textarea>
-    <el-button @click="submit">更改</el-button>
   </div>
 </template>
 
 <script>
-import data from "./data";
+import data from './data'
 export default {
   data() {
     return {
-      apiInfo: {},
-      elTagColors: ["green", "deepskyblue", "lightsalmon"]
+      apiInfo: {
+        name: "",
+        time: "",
+        status: [],
+        requestType: "",
+        submitType: "",
+        interfaceStatus: "已发布",
+        address: "",
+        dataType: "JSON",
+        responseType: "JSON",
+        interfaceDescribe: "",
+        requestParams: [],
+        responseParams: [],
+        spamplesAddress: ""
+      },
+      elTagColors: ['green', 'deepskyblue', 'lightsalmon']
     };
   },
   mounted: function() {
-    // for (const item of data) {
-    //     console.log(item.name,  this.$router.currentRoute.params.info)
-    //     if (item.name == this.$router.currentRoute.params.info) {
-    //         this.apiInfo = item;
-    //         break;
-    //     }
-    // }
-    this.$request
-      .get(
-        `/admin/api/${this.$route.params.sys_id}/${this.$route.params.api_id}`
-      )
+      // for (const item of data) {
+      //     console.log(item.name,  this.$router.currentRoute.params.info)
+      //     if (item.name == this.$router.currentRoute.params.info) {
+      //         this.apiInfo = item;
+      //         break;
+      //     }
+      // }
+      this.$request.get(`/admin/api/${this.$route.params.sys_id}/${this.$route.params.api_id}`)
       .then(res => {
-        this.apiInfo = res.data;
-        console.log(this.apiInfo);
-      });
+        this.apiInfo = res.data
+        console.log(this.apiInfo)
+      })
   },
-  methods: {
-    submit() {
-      this.$request
-        .put(
-          `/admin/api/${this.$route.params.sys_id}/${this.$route.params.api_id}`,
-          this.apiInfo
-        )
-        .then(res => {
-          this.$message(res.message);
-        });
-    }
-  }
+  methods: {}
 };
 </script>
 <style lang="scss" scoped>
@@ -163,8 +160,8 @@ export default {
   align-items: flex-start;
   margin: 10px 0px 10px 70px;
   span {
-    margin-right: 10px;
-    color: #ffffff;
+      margin-right: 10px;
+      color: #ffffff;
   }
 }
 .describe {

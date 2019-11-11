@@ -8,6 +8,9 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.config.productionTip = false
 Vue.use(ElementUI);
 
+import request from '@/apiv1/base';
+Vue.prototype.$request = request;
+
 new Vue({
     router,
     store,
